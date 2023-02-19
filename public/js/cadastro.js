@@ -19,14 +19,13 @@ login_button.addEventListener('click', async (e) => {
     })
     .then(res=> res.json())
     .then((res) => {
-        console.log(res)
-        if(res.status == 200){
-            alert(res.msg)
+        if(res.msg === 'Cadastro realizado com sucesso!'){
+            alert(res.msg);
             document.querySelector('#name').value = '';
             document.querySelector('#email').value = '';
             document.querySelector('#password').value = '';
         } else {
-            alert('ERRO! Não foi possível fazer o seu cadastro!')
+            alert(res.msg);
         }
     })
     .catch(err=>console.log(err))

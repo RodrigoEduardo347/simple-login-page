@@ -14,4 +14,19 @@ login_button.addEventListener('click', async () => {
             password
         })
     })
+    .then(res=> res.json())
+    .then((res)=>{
+        console.log(res)
+        if(res.msg === 'Login realizado com sucesso!'){
+            alert(res.msg);
+            console.log('Este é o seu token: ', res.token);
+            document.querySelector('#email').value = '';
+            document.querySelector('#password').value = '';
+        } else {
+            alert(res.msg);
+        }
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
 })

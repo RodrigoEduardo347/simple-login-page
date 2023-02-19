@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 17-Fev-2023 às 18:12
+-- Tempo de geração: 19-Fev-2023 às 18:57
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `sistema`
 --
+CREATE DATABASE IF NOT EXISTS `sistema` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `sistema`;
 
 -- --------------------------------------------------------
 
@@ -35,18 +37,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
-
---
--- Extraindo dados da tabela `usuario`
---
-
-INSERT INTO `usuario` (`id`, `nome`, `email`, `password`) VALUES
-(1, 'João Paulo Murmúrio', 'joaopaulo@gmail.com', '$2b$12$MRosywmB61qAwBsB.DwUiuQ7Ib7RMxO1iuQeuJDG60SjnMoUBLclO'),
-(2, 'Rodrigo Eduardo Baptista', 'rodrigo@gmail.com', '$2b$12$W5xY4QnJRqg71ZSm43G46O9rCdrHfFEkFge0pAFrGksRzGAVTMWJK'),
-(3, 'Marco Valência de Lima', 'marcovalencia@teste.com', '$2b$12$HJ8HQ3gSYvAd7GKheo6WpOm.z4716y92TKhDS2XRv6tjfKgZJdHwm'),
-(4, 'Liliane Bonucchi de Lima', 'lilianegamer@hotmail.com', '$2b$12$.T4PjhV6iz5N3V5eYLQWDO7wa5oUMINCz5wvCA44bCbwUxkRRVuhm'),
-(5, 'Mario Justus do Maro Lima', 'marioJustus@generic.test', '$2b$12$LhPOjOQa6HOKhQz88RfggeyzwPwaUUHnljl4cJ1yfRTcb8ItpH2I2');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
